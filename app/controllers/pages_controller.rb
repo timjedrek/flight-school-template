@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  def template_start
+  end
+  
   def home
   end
 

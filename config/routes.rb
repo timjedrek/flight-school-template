@@ -6,21 +6,21 @@ Rails.application.routes.draw do
     match "/404", to: "errors#not_found", via: :all
     match "/500", to: "errors#internal_server_error", via: :all
   
-  devise_scope :admins do
-    # Redirests signing out users back to sign-in
-    get "admins", to: "devise/sessions#new"
-  end
+  #devise_scope :admins do
+  #  # Redirests signing out users back to sign-in
+  #  get "admins", to: "devise/sessions#new"
+  #end
 
   devise_for :admins, controllers: { registrations: "registrations", sessions: "sessions" }
   #root "pages#home"
-  root "messages#home2"
+  root "pages#template_start"
 
   #post 'uploader/image', to: 'uploader#image' #add upload image to posts 
   #get 'blog', to: 'posts#index', as: :blog
   #resources :posts
   
   #resources :discover_flights
-  resources :messages
+  #resources :messages
   #resources :enrollments
   #resources :book_downloads
   #resources :checkouts
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   # Contact form
   #get 'contact', to: 'messages#new', as: :contact
-  get 'contact-confirmation', to: 'messages#confirmation', as: :contact_confirmation
+  #get 'contact-confirmation', to: 'messages#confirmation', as: :contact_confirmation
   #get 'visit-simplifly', to: 'messages#location', as: :location
   #get 'instruct-at-simplifly', to: 'messages#cfi', as: :cfi
 
